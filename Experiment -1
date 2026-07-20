@@ -1,0 +1,22 @@
+Experiment 1.1  Contains Duplicat-1(217)
+Code:
+class Solution:
+    def containsDuplicate(self, nums):
+        seen = set()
+
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
+
+        return False
+Experiment 1.2 Contains Duplicate-2(219)
+Code:
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        dict = {}
+        for i in range(0,len(nums)):
+            if nums[i] in dict and abs(i-dict[nums[i]]) <= k: 
+                return True
+            dict[nums[i]]=i
+        return False
